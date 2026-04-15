@@ -118,7 +118,7 @@ export default function Chat() {
         </div>
       )}
 
-      <h1>📚 Placement Prep RAG</h1>
+      <h1 style={{ color: "black" }}>📚 Placement Prep RAG</h1>
 
       <div style={{ marginBottom: 20, padding: 15, background: "#fffacd", borderRadius: 8, border: "1px solid #ddd" }}>
         <h3>📤 Upload Document</h3>

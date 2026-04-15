@@ -34,3 +34,24 @@ class OpenAICompatClient:
         async for chunk in stream:
             if chunk.choices and chunk.choices[0].delta.content:
                 yield chunk.choices[0].delta.content
+
+    async def get_completion(
+        self,
+        system: str,
+        user: str,
+        temperature: float = 0.2,
+        max_tokens: int = 2000,
+    ) -> str:
+        """
+        Gets full text completion from an OpenAI-compatible endpoint (non-streaming).
+        """
+        response = await self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+            temperature=temperature,
+            max_tokens=max_tokens,
+        )
+        return response.choices[0].message.content or ""

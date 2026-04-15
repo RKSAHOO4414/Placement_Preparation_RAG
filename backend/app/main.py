@@ -17,6 +17,7 @@ from fastapi.responses import StreamingResponse
 from app.rag.llm_clients import OpenAICompatClient
 from app.rag.prompts import ANSWER_SYSTEM, build_answer_user_prompt
 from app.models.schemas import ChatRequest
+from app.api import routes_quiz
 
 @dataclass
 class AppState:
@@ -26,6 +27,9 @@ class AppState:
 
 app = FastAPI()
 add_cors(app)
+
+# Register routers
+app.include_router(routes_quiz.router)
 
 client = get_client(settings.qdrant_url)
 embedder = Embedder(settings.embedding_model)
