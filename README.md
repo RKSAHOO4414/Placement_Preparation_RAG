@@ -56,3 +56,38 @@ This is not just a chatbot.
 ---
 
 ## Architecture (High-Level)
+
+User Query
+↓
+Embedding Model
+↓
+Qdrant (Vector Search)
+↓
+Relevant Chunks Retrieved
+↓
+LLM (Answer Generation)
+↓
+Response with Citations
+
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+- Python 3.9+
+- Node.js 16+
+- Qdrant running
+
+---
+
+### Backend Setup
+
+```bash
+cd backend
+
+python -m venv .venv
+.venv\Scripts\activate   # Windows
+# source .venv/bin/activate  # macOS/Linux
+
+pip install -r requirements.txt
