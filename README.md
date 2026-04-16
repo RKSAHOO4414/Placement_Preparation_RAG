@@ -248,7 +248,6 @@ Response:
 
 ## Future Roadmap
 
-- [ ] Performance analytics (score trends, weak topics)
 - [ ] Quiz history & retry
 - [ ] Timed quiz mode
 - [ ] User authentication (JWT)
@@ -265,12 +264,6 @@ Response:
 - **Search:** ~50ms for top-10 retrieval
 - **LLM Generation:** ~2-5s (Groq API)
 - **Total Response:** ~7-10s (streaming in real-time)
-
----
-
-## License
-
-MIT
 
 ---
 
